@@ -148,6 +148,33 @@ add_action ( 'wp_print_styles', 'my_deregister_style', 100 );
 
 
 
+// li class add in menu
+function add_additional_class_on_li($classes, $item, $args) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+
+
+// добавление в menu-1>li>a класса  nav-link
+// добавление в menu-2>li>a класса  nav-link-footer
+function add_additional_class_on_li_a( $atts, $item, $args ) {
+	if( $args->theme_location == 'menu-1' ) {
+		$class = 'nav-link'; // or something based on $item
+   		$atts['class'] = $class;
+	  }
+	  if( $args->theme_location == 'menu-2' ) {
+		$class = 'nav-link-footer'; // or something based on $item
+		$atts['class'] = $class;		
+	  }  
+    
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'add_additional_class_on_li_a', 10, 3 );
+
 
 
 
